@@ -11,6 +11,7 @@
   import Permissions from './pages/Permission/index.svelte';
   import Roles from './pages/Role/index.svelte';
   import Schema from './pages/Schema/index.svelte';
+  import Tasks from './pages/Task/index.svelte';
   import Users from './pages/User/index.svelte';
   import Home from './pages/Home.svelte';
 
@@ -31,6 +32,7 @@
         permissions: Permissions,
         roles: Roles,
         schema: Schema,
+        tasks: Tasks,
         users: Users,
       }[matched.name];
       params = result.params;

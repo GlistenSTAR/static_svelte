@@ -7,12 +7,12 @@
   import Github from '../../assets/imgs/github.svg';
   import MPDS from '../../assets/imgs/mpds.svg';
 
-  import { auth_github, auth_mpds } from '$lib/services/auth';
-  import { goto } from '$app/navigation';
+  import { auth_github, auth_mpds } from '../../lib/services/auth';
+  import Loading from '../../components/loading.svelte';
 
-  onMount(async () => {
+  onMount(() => {
     if ($login_user.user_id) {
-      goto('/');
+      window.location.href = '/';
     } else {
       toast.send({
         type: 'primary',

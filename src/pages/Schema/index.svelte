@@ -1,6 +1,5 @@
 <script>
   import { onMount } from 'svelte';
-  import { goto } from '$app/navigation';
   import {
     Button,
     Pagination,
@@ -18,7 +17,7 @@
     get_schemas,
     update_schema,
     delete_schema,
-  } from '$lib/services/schemas';
+  } from '../../lib/services/schemas';
   import { login_user, schemas, pagination, schema } from '../../store';
   import Loading from '../../components/loading.svelte';
 
@@ -40,7 +39,7 @@
         !$login_user.role ||
         !$login_user.role.permissions.includes('schema_mng')
       ) {
-        await goto('/login');
+        window.location.href = '/login';
         return;
       }
     }
@@ -287,7 +286,7 @@
 
   const applyTask = (value) => {
     schema.set(value);
-    goto('/task');
+    window.location.href = '/tasks';
   };
 
   const handleAddSchema = async () => {

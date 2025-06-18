@@ -1,10 +1,9 @@
 <script>
   import { onMount } from 'svelte';
-  import { goto } from '$app/navigation';
+  import { path } from 'svelte-pathfinder';
   import { Navbar, Icon, Dropdown } from 'svelte-spectre';
   import { login_user } from '../store';
-  import { set_login_user, logout_user } from '$lib/services/user';
-  import { page } from '$app/stores';
+  import { set_login_user, logout_user } from '../lib/services/user';
 
   let username = '';
   let active = false;
@@ -23,7 +22,7 @@
   const logout = async () => {
     localStorage.removeItem('access_token');
     logout_user();
-    await goto('/');
+    window.location.href = '/';
   };
 </script>
 
@@ -36,30 +35,30 @@
   <div slot="right" class="navbar-right">
     <ul class="navbar-menu">
       {#if $login_user.user_id}
-        <!-- <li class:active={$page.url.pathname === '/form_generator'}>
+        <!-- <li class:active={path === '/form_generator'}>
 					<a href="/form_generator" class="button button--primary">Form Generator</a>
 				</li> -->
         {#if $login_user.role && $login_user.role.permissions.includes('schema_mng')}
-          <li class:active={$page.url.pathname === '/schema'} class="mb-3">
+          <li class:active={path === '/schema'} class="mb-3">
             <a href="/schema" class="button button--primary">Schemas</a>
           </li>
         {/if}
-        <!-- <li class:active={$page.url.pathname === '/article'} class="mb-3">
+        <!-- <li class:active={path === '/article'} class="mb-3">
 					<a href="/article" class="button button--primary">Articles</a>
 				</li> -->
-        <li class:active={$page.url.pathname === '/task'} class="mb-3">
-          <a href="/task" class="button button--primary">Tasks</a>
+        <li class:active={path === '/tasks'} class="mb-3">
+          <a href="/tasks" class="button button--primary">Tasks</a>
         </li>
         {#if $login_user.role && $login_user.role.permissions.includes('user_mng')}
-          <li class:active={$page.url.pathname === '/users'} class="mb-3">
+          <li class:active={path === '/users'} class="mb-3">
             <a href="/users" class="button button--primary">Users</a>
           </li>
-          <li class:active={$page.url.pathname === '/roles'} class="mb-3">
+          <li class:active={path === '/roles'} class="mb-3">
             <a href="/roles" class="button button--primary">Roles</a>
           </li>
         {/if}
         {#if $login_user.role && $login_user.role.permissions.includes('permission_mng')}
-          <li class:active={$page.url.pathname === '/permissions'} class="mb-3">
+          <li class:active={path === '/permissions'} class="mb-3">
             <a href="/permissions" class="button button--primary">Permissions</a
             >
           </li>

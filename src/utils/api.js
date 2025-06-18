@@ -1,9 +1,7 @@
 // @ts-nocheck
 import axios from 'axios';
 
-import { env } from '$env/dynamic/public';
-
-export const API_URL = env.PUBLIC_API_URL || 'http://localhost:8000/api/v1';
+export const API_URL = 'http://localhost:8000/api/v1';
 const axiosAPI = axios.create({ baseURL: `${API_URL}` });
 
 const apiRequest = async (

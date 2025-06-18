@@ -1,11 +1,9 @@
-// @ts-nocheck
-import { env } from '$env/dynamic/public';
+const API_URL = 'http://localhost:8000/api/v1';
 
 export const auth_github = async () => {
-	window.location.href = (env.PUBLIC_API_URL || 'http://localhost:8000/api/v1') + '/auth/github';
+  window.location.href = API_URL + '/auth/github';
 };
 
 export const auth_mpds = async () => {
-	console.log(env.PUBLIC_API_URL);
-	window.location.href = (env.PUBLIC_API_URL || 'http://localhost:8000/api/v1') + '/auth/mpds';
+  window.location.href = API_URL + '/auth/mpds';
 };

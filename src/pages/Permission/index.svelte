@@ -1,11 +1,13 @@
 <script>
   // @ts-nocheck
   import { onMount } from 'svelte';
-  import { goto } from '$app/navigation';
   import { Button, Input } from 'svelte-spectre';
 
   import { permissions, login_user } from '../../store';
-  import { get_permissions, update_permission } from '$lib/services/permission';
+  import {
+    get_permissions,
+    update_permission,
+  } from '../../lib/services/permission';
   import Loading from '../../components/loading.svelte';
 
   let editingPermission = null;
@@ -18,7 +20,7 @@
         !$login_user.role ||
         !$login_user.role.permissions.includes('permission_mng')
       ) {
-        await goto('/login');
+        window.location.href = '/login';
         return;
       }
       await get_permissions();
@@ -65,33 +67,33 @@
   <div class="permission_page">
     <h1>Permission List</h1>
     <!-- <div class="btn-group mb-5">
-			<Button variant="success" on:click={startAdding}>Add Permission</Button>
-		</div> -->
+      <Button variant="success" on:click={startAdding}>Add Permission</Button>
+    </div> -->
 
     <!-- {#if addingPermission}
-			<form on:submit|preventDefault={addPermission}>
-				<div class="add-form">
-					<Input
-						type="text"
-						label="Slug"
-						bind:value={newPermission.slug}
-						placeholder="Enter slug"
-						required
-					/>
-					<Input
-						type="text"
-						label="Label"
-						bind:value={newPermission.label}
-						placeholder="Enter label"
-						required
-					/>
-					<div class="btn-group mb-5">
-						<Button type="submit" variant="success">Add</Button>
+      <form on:submit|preventDefault={addPermission}>
+        <div class="add-form">
+          <Input
+            type="text"
+            label="Slug"
+            bind:value={newPermission.slug}
+            placeholder="Enter slug"
+            required
+          />
+          <Input
+            type="text"
+            label="Label"
+            bind:value={newPermission.label}
+            placeholder="Enter label"
+            required
+          />
+          <div class="btn-group mb-5">
+            <Button type="submit" variant="success">Add</Button>
 						<Button type="button" on:click={cancelAdding} variant="error">Cancel</Button>
-					</div>
-				</div>
-			</form>
-		{/if} -->
+          </div>
+        </div>
+      </form>
+    {/if} -->
 
     <table class="table">
       <thead>
@@ -110,12 +112,12 @@
                 <form on:submit|preventDefault={savePermission}>
                   <div class="edit-form">
                     <!-- <Input
-											type="text"
-											label="Slug"
-											bind:value={editingPermission.slug}
-											placeholder="Edit slug"
-											required
-										/> -->
+                      type="text"
+                      label="Slug"
+                      bind:value={editingPermission.slug}
+                      placeholder="Edit slug"
+                      required
+                    /> -->
                     <Input
                       type="text"
                       label="Label"
@@ -148,12 +150,12 @@
                     Edit
                   </Button>
                   <!-- <Button
-										type="button"
-										on:click={() => deletePermission(permission.permission_id)}
-										variant="error"
-									>
-										Delete
-									</Button> -->
+                    type="button"
+                    on:click={() => deletePermission(permission.permission_id)}
+                    variant="error"
+                  >
+                    Delete
+                  </Button> -->
                 </div>
               </td>
             {/if}

@@ -1,17 +1,16 @@
 <script>
   // @ts-nocheck
   import { onMount } from 'svelte';
-  import { goto } from '$app/navigation';
   import { Button, Input } from 'svelte-spectre';
 
-  import { roles, login_user, permissions } from '../../store';
+  import { login_user, roles, permissions } from '../../store';
   import {
     get_roles,
     add_role,
     update_role,
     delete_role,
-  } from '$lib/services/role';
-  import { get_permissions } from '$lib/services/permission';
+  } from '../../lib/services/role';
+  import { get_permissions } from '../../lib/services/permission';
   import Loading from '../../components/loading.svelte';
 
   let editingRole = null;
@@ -25,9 +24,10 @@
         !$login_user.role ||
         !$login_user.role.permissions.includes('role_mng')
       ) {
-        await goto('/login');
+        window.location.href = '/login';
         return;
       }
+
       await get_permissions();
       await get_roles();
       loading = false;

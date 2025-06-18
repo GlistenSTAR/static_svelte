@@ -14,7 +14,7 @@
     Avatar,
   } from 'svelte-spectre';
 
-  import { get_limited_users } from '$lib/services/user';
+  import { get_limited_users } from '../../lib/services/user';
   import {
     get_tasks,
     add_task,
@@ -24,9 +24,9 @@
     assign_task,
     approve_task,
     reject_task,
-  } from '$lib/services/task';
-  import { search_schemas } from '$lib/services/schemas';
-  import { search_articles } from '$lib/services/article';
+  } from '../../lib/services/task';
+  import { search_schemas } from '../../lib/services/schemas';
+  import { search_articles } from '../../lib/services/article';
   import { login_user, tasks, all_user, pagination, schema } from '../../store';
   import Loading from '../../components/loading.svelte';
   import AutoComplete from '../../components/AutoComplete.svelte';

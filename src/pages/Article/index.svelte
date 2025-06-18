@@ -19,7 +19,7 @@
     add_article,
     edit_article,
     delete_article,
-  } from '$lib/services/article';
+  } from '../../lib/services/article';
   import { login_user, articles, pagination } from '../../store';
   import Loading from '../../components/loading.svelte';
 
