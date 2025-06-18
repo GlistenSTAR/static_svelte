@@ -1,0 +1,168 @@
+body {
+  margin: 0 !important;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.navbar {
+  padding-top: 10px;
+}
+
+.toast {
+  font-size: 18px;
+  padding: 10px 5px;
+}
+
+.navbar,
+.main-content {
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+table th,
+table td {
+  padding: 10px;
+  text-align: center;
+}
+
+table th {
+  background-color: #f4f4f4;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.my-2 {
+  margin: 10px 0;
+}
+
+.button.button--primary {
+  margin-right: 10px;
+}
+
+.loading_section .loading::after {
+  height: 50px !important;
+  width: 50px !important;
+}
+
+ul.pagination {
+  list-style: none !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+ul.pagination li {
+  padding: 10px;
+}
+
+.spectre .btn-group {
+  flex-wrap: nowrap !important;
+}
+
+.spectre .btn-group .btn {
+  flex: 0 0 auto !important;
+}
+
+[color-scheme='dark'] table th {
+  background-color: #3b4654;
+}
+
+[color-scheme='dark'] tr:nth-child(even) {
+  background-color: #3b4654;
+}
+
+[color-scheme='dark'] ul.autocomplete-ul {
+  background: #252b33 !important;
+}
+
+.spectre .toast {
+  background: #5755d9f2 !important;
+}
+
+.opacity-30 {
+  opacity: 0.3;
+}
+
+.flex {
+  display: flex;
+}
+
+.justify-end {
+  justify-content: end;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-start {
+  justify-content: start;
+}
+
+.custom-checkbox input {
+  display: none;
+}
+
+.custom-checkbox {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  color: #ddd;
+  cursor: pointer;
+  margin-bottom: 8px;
+}
+
+.custom-checkbox .checkmark {
+  width: 18px;
+  height: 18px;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+  display: inline-block;
+  margin-right: 8px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.custom-checkbox input:checked + .checkmark {
+  background-color: #485261;
+  border-color: #485261;
+}
+
+.custom-checkbox input:checked + .checkmark::after {
+  content: '✔';
+  font-size: 14px;
+  color: white;
+  position: absolute;
+  left: 3px;
+  top: -2px;
+}
+
+.code {
+  width: 80vw !important;
+}
+
+.highlight {
+  background-color: rgb(255, 233, 179) !important;
+  color: rgb(59, 67, 81);
+}
+
+.full-width {
+  width: 100%;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+footer label.form-switch {
+  cursor: pointer !important; /* FIXME in UI-kit */
+}

@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "description": "Sample schema for Dummy code",
+  "type": "object",
+  "additionalProperties": true,
+  "properties": {
+    "parameter_one": {
+      "type": "string",
+      "enum": ["ABCDEF", "XYZWVU"]
+    },
+    "parameter_two": {
+      "type": "boolean"
+    }
+  }
+}
